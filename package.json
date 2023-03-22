@@ -1,0 +1,22 @@
+{
+  "name": "yuri",
+  "version": "1.0.0",
+  "description": "Criar o arquivo package",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "build": "sucrase ./src -d ./outDir --transforms imports"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^5.1.0",
+    "mongoose": "^5.8.9",
+    "yup": "^0.28.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21",
+    "sucrase": "^3.12.1"
+  }
+}
