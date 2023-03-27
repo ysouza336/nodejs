@@ -4,24 +4,17 @@ import {Router} from 'express'
 import mongoose from 'mongoose';
 
 import UseController from './app/controllers/UseController';
+import LoginController from './app/controllers/LoginController'
 
+import authMiddleware from './app/middlewares/auth';
 
 
 const routes = new Router();
 
 routes.post('/users',UseController.store)
+routes.delete('/users/:id',authMiddleware,UseController.delete)
+routes.post('/login',LoginController.store)
 
-/*routes.get('/', async (req,res)=>{
-    await User.create({
-        nome:'Yuri3',
-        email:'teste@teste.com',
-        senha:'12345'
-    }, function(err,small){
-        if(err)return res.status(400).json({error:"Erro: Usuário não foi cadastrado !"});
-        
-        return res.status(200).json({error: "Usuário cadastrado com Sucesso !"});
-    })
-})*/
 
 
 //module.exports = routes;
