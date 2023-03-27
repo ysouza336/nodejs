@@ -27,5 +27,5 @@ export default async(req, res, next) => {
             message: "Erro: Token inválido!"
         });
      }    
-     return next();
+     
 }
